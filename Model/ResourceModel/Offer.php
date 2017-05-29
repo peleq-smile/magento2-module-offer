@@ -130,7 +130,7 @@ class Offer extends AbstractDb
      * @throws \Exception
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    private function getOfferId(AbstractModel $object, $value, $field = null)
+    protected function getOfferId(AbstractModel $object, $value, $field = null)
     {
         $entityMetadata = $this->metadataPool->getMetadata(OfferInterface::class);
 

@@ -28,12 +28,12 @@ class RegistryLocator implements LocatorInterface
     /**
      * @var Registry
      */
-    private $registry;
+    protected $registry;
 
     /**
      * @var OfferInterface
      */
-    private $offer;
+    protected $offer;
 
     /**
      * @param Registry $registry The application registry

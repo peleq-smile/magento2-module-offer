@@ -46,7 +46,7 @@ class InstallSchema implements InstallSchemaInterface
      *
      * @throws \Zend_Db_Exception
      */
-    private function createOfferTable(SchemaSetupInterface $setup)
+    protected function createOfferTable(SchemaSetupInterface $setup)
     {
         $table = $setup->getConnection()
             ->newTable($setup->getTable('smile_offer'))

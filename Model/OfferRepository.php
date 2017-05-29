@@ -39,17 +39,17 @@ class OfferRepository implements OfferRepositoryInterface
     /**
      * @var \Smile\Offer\Model\ResourceModel\Offer
      */
-    private $resource;
+    protected $resource;
 
     /**
      * @var \Smile\Offer\Model\ResourceModel\Offer\CollectionFactory
      */
-    private $offerCollectionFactory;
+    protected $offerCollectionFactory;
 
     /**
      * @var \Smile\Offer\Api\Data\OfferSearchResultsInterface
      */
-    private $searchResultsFactory;
+    protected $searchResultsFactory;
 
 
     /**
@@ -141,7 +141,7 @@ class OfferRepository implements OfferRepositoryInterface
      *
      * @return Collection
      */
-    private function getOfferCollection(SearchCriteriaInterface $criteria)
+    protected function getOfferCollection(SearchCriteriaInterface $criteria)
     {
         $collection = $this->offerCollectionFactory->create();
 
@@ -162,7 +162,7 @@ class OfferRepository implements OfferRepositoryInterface
      *
      * @return $this
      */
-    private function addFiltersToCollection(
+    protected function addFiltersToCollection(
         Collection $collection,
         SearchCriteriaInterface $criteria
     ) {
@@ -184,7 +184,7 @@ class OfferRepository implements OfferRepositoryInterface
      *
      * @return $this
      */
-    private function addSortOrdersToCollection(
+    protected function addSortOrdersToCollection(
         Collection $collection,
         SearchCriteriaInterface $criteria
     ) {

@@ -28,12 +28,12 @@ class ReindexOffer implements ObserverInterface
     /**
      * @var \Magento\Framework\Indexer\IndexerRegistry
      */
-    private $indexerRegistry;
+    protected $indexerRegistry;
 
     /**
      * @var \Magento\Framework\Indexer\IndexerInterface
      */
-    private $indexer;
+    protected $indexer;
 
     /**
      * ReindexOffer constructor.

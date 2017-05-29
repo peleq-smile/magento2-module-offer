@@ -38,12 +38,12 @@ class Collection extends \Smile\Offer\Model\ResourceModel\Offer\Collection
     /**
      * @var EntityFactory
      */
-    private $eavEntityFactory;
+    protected $eavEntityFactory;
 
     /**
      * @var array an array of external entities attributes to add to the current collection.
      */
-    private $fieldAlias = [];
+    protected $fieldAlias = [];
 
     /**
      * Collection constructor.
@@ -204,7 +204,7 @@ class Collection extends \Smile\Offer\Model\ResourceModel\Offer\Collection
      * @return string
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
-    private function getForeignKeyByEntityType($entity)
+    protected function getForeignKeyByEntityType($entity)
     {
         $metadata   = $this->metadataPool->getMetadata($entity);
         $entityType = $metadata->getEavEntityType();
@@ -228,7 +228,7 @@ class Collection extends \Smile\Offer\Model\ResourceModel\Offer\Collection
      *
      * @return string
      */
-    private function getEntityAttributeTableAlias($entity, $attributeCode)
+    protected function getEntityAttributeTableAlias($entity, $attributeCode)
     {
         $metadata   = $this->metadataPool->getMetadata($entity);
         $entityType = $metadata->getEavEntityType();

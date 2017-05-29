@@ -31,17 +31,17 @@ class OfferManagement implements OfferManagementInterface
     /**
      * @var \Smile\Offer\Api\Data\OfferInterfaceFactory
      */
-    private $offerFactory;
+    protected $offerFactory;
 
     /**
      * @var \Smile\Offer\Api\OfferRepositoryInterface
      */
-    private $offerRepository;
+    protected $offerRepository;
 
     /**
      * @var \Smile\Offer\Model\ResourceModel\Offer\CollectionFactory
      */
-    private $offerCollectionFactory;
+    protected $offerCollectionFactory;
 
     /**
      * OfferManagement constructor.

@@ -31,7 +31,7 @@ class OfferData implements DatasourceInterface
     /**
      * @var \Smile\Offer\Model\ResourceModel\Product\Indexer\Fulltext\Datasource\OfferData
      */
-    private $resourceModel;
+    protected $resourceModel;
 
     /**
      * Constructor.
@@ -69,7 +69,7 @@ class OfferData implements DatasourceInterface
      *
      * @return array
      */
-    private function processOfferPrices($offerData, $productData)
+    protected function processOfferPrices($offerData, $productData)
     {
         $defaultPriceData = [];
         if (isset($productData['price'])) {

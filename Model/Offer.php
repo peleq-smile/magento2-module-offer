@@ -211,7 +211,7 @@ class Offer extends AbstractModel implements OfferInterface, IdentityInterface
      *
      * @return bool|string[] - return true if validation passed successfully. Array with errors description otherwise
      */
-    private function validateData(\Magento\Framework\DataObject $dataObject)
+    protected function validateData(\Magento\Framework\DataObject $dataObject)
     {
         $result = [];
 
