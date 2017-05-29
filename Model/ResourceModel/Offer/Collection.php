@@ -20,7 +20,7 @@ use Magento\Framework\DB\Adapter\AdapterInterface;
 use Magento\Framework\EntityManager\MetadataPool;
 use Magento\Framework\Event\ManagerInterface;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
-use \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 use Psr\Log\LoggerInterface;
 use Smile\Offer\Api\Data\OfferInterface;
 
@@ -37,6 +37,10 @@ class Collection extends AbstractCollection
      * @var MetadataPool $metadataPool
      */
     protected $metadataPool;
+    /**
+     * @var string
+     */
+    protected $_idFieldName = 'offer_id';
 
     /**
      * Collection constructor.
@@ -59,9 +63,10 @@ class Collection extends AbstractCollection
         AdapterInterface $connection = null,
         AbstractDb $resource = null,
         $sellerEntity = null
-    ) {
+    )
+    {
         parent::__construct($entityFactory, $logger, $fetchStrategy, $eventManager, $connection, $resource);
-        $this->metadataPool  = $metadataPool;
+        $this->metadataPool = $metadataPool;
         if ($sellerEntity !== null) {
             $this->addSellerTypeFilter($sellerEntity);
         }
@@ -83,8 +88,8 @@ class Collection extends AbstractCollection
             $sellerResource = $sellerInstance->getResource();
             $attributeSetId = $sellerResource->getAttributeSetIdByName($sellerInstance->getAttributeSetName());
 
-            $sellerTable    = $sellerMetadata->getEntityTable();
-            $sellerPkName   = $sellerMetadata->getIdentifierField();
+            $sellerTable = $sellerMetadata->getEntityTable();
+            $sellerPkName = $sellerMetadata->getIdentifierField();
 
             if (null !== $attributeSetId) {
                 $this->getSelect()->joinInner(
